@@ -96,6 +96,7 @@ type Modify<T, R> = Omit<T, keyof R> & R;
 type Props<T> = Modify<
   FlatListProps<T>,
   {
+    enabled: true,
     autoscrollSpeed?: number;
     autoscrollThreshold?: number;
     data: T[];
@@ -878,6 +879,7 @@ class DraggableFlatList<T> extends React.Component<Props<T>, State> {
     }
     return (
       <PanGestureHandler
+        enabled={this.props.enabled}
         ref={this.panGestureHandlerRef}
         onGestureEvent={this.onPanGestureEvent}
         onHandlerStateChange={this.onPanStateChange}
