@@ -96,7 +96,7 @@ type Modify<T, R> = Omit<T, keyof R> & R;
 type Props<T> = Modify<
   FlatListProps<T>,
   {
-    enabled: true,
+    enabled: boolean;
     autoscrollSpeed?: number;
     autoscrollThreshold?: number;
     data: T[];
